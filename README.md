@@ -10,3 +10,5 @@ http://zh.wikipedia.org/wiki/全称量化
 ```
 http://programmermagazine.github.io/201403/htm/focus3.html
 ```
+
+
