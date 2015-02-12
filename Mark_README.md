@@ -2,7 +2,7 @@
 
 邏輯就是研究推理規則、有可以判斷真假的敘述
 
-邏輯學基本原理
+## 邏輯學基本原理
 同一律（the law of identity）
   事物跟其自身相等同，「自己」不能「不是自己」。
 無矛盾律（the law of non-contradiction）
