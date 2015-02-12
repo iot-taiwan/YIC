@@ -5,12 +5,15 @@
 ## 邏輯學基本原理
 ### 同一律（the law of identity）
   事物跟其自身相等同，「自己」不能「不是自己」。
-  舉例：如果p，那麼p 
-  p=p
+  舉例：如果p，那麼p，p=p
 ### 無矛盾律（the law of non-contradiction）
   事物不能同時「是」跟「不是」。是就是，不是就不是。
+  舉例：地球是圓的。
+        太陽從東邊升起。
 ### 排中律（the law of excluded middle）
   事物只能有「是」或「不是」兩種狀態，不存在其他中間狀態。
+  你吃過午餐了嗎？
+  
 ### 充足理由律（the law of sufficient reason）
   任何事物都有其存在的充足理由。
 
