@@ -5,6 +5,7 @@
 ## 邏輯學基本原理
 ### 同一律（the law of identity）
   事物跟其自身相等同，「自己」不能「不是自己」。
+  如果p，那麼p，即為p\to p形式的命題成立。
 ### 無矛盾律（the law of non-contradiction）
   事物不能同時「是」跟「不是」。是就是，不是就不是。
 ### 排中律（the law of excluded middle）
