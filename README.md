@@ -11,4 +11,13 @@ http://zh.wikipedia.org/wiki/全称量化
 http://programmermagazine.github.io/201403/htm/focus3.html
 ```
 
-
+x:輸入的數(原樹)
+
+
+y:x開根號的答案
+
+
+∃y(y^2=x)
+
+存在一個數y，使得y的平方等於x
+y即為所求
