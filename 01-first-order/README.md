@@ -73,7 +73,7 @@ First Order Logic 使用二個符號來表示變數（variable quantifiers）：
 
 解釋如下：
 
-* for all X, at(X, rit) is smart(X)
+* for all X, at(X, rit) is → smart(X) is true
 * smart(X) 為 true，表示 X is smart
 
 以上整句的意思為：everyone at RIT is smart[1]。
