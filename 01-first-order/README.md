@@ -88,6 +88,34 @@ First Order Logic 使用二個符號來表示變數（variable quantifiers）：
 
 1. 如何用 First Order Logic 來設計開根號的演算法？
 
+2. 下列程式碼，是某個 First Order Logic 的開根號演算法。請試著撰寫這段程式碼的一階邏輯：
+
+```
+int main() 
+{
+	unsigned long n = 123456789;
+	unsigned long x = 1, a, tmp;
+	double sqrt;
+
+	while (x * x < n)
+		x = x + 1;
+
+	x = x - 1;
+
+ 	tmp = x * x;  
+	a = n - tmp;
+
+	sqrt = 1.0;
+	sqrt = 2 * x;
+	sqrt = 1 / sqrt;
+	sqrt = x + sqrt;
+
+	printf("sqrt(%d) = %f\n", n, sqrt);
+}
+```
+
+3. 是否能設計一套更棒的「開根號一階邏輯」？
+
 ## 參考資源
 
 [1]: http://www.cs.rit.edu/~rlc/Courses/IS/ClassNotes/PredicateLogic.pdf
