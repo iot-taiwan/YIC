@@ -1,42 +1,12 @@
 {
 	"author": "mbed Taiwan",
 	"url": "http://mbed.tw",
-	"title": "ARM mbed 物聯網學堂",
+	"title": "ARM mbed for Young",
 	"about": "「ARM mbed 物聯網學堂」教材由 mbed Taiwan 團隊製作。不漏接 IoT 商機與 ARM mbed 訊息，緊盯 http://mbed.tw",
 	"index": [{
 		"chapter": "第 1 章：ARM mbed 起步走",
-		"folder": "01-getting-started",
-		"desc": "學會使用 online compiler 並撰寫 Hello, World",
-		"holder": "https://static.mokoversity.com/moow/mbed-school/res/chapter1-holder.jpg"
-	}, {
-		"chapter": "第 2 章：學習 ARM mbed GPIO 控制",
-		"folder": "02-gpio-introduction",
-		"desc": "使用 LPC1768 的 GPIO 自造簡單小物",
-		"holder": "https://static.mokoversity.com/moow/mbed-school/res/chapter2-holder.jpg"
-	}, {
-		"chapter": "第 3 章：Sensor 模組與 GPIO API",
-		"folder": "03-modules-and-api-introduction",
-		"desc": "認識常用 Sensor，以及 LPC1786 腳位",
-		"holder": "https://static.mokoversity.com/moow/mbed-school/res/chapter3-holder.jpg"
-	}, {
-		"chapter": "第 4 章：ARM mbed 網路組態",
-		"folder": "04-mbed-networking",
-		"desc": "讓 ARM mbed 連上 Internet",
-		"holder": "https://static.mokoversity.com/moow/mbed-school/res/chapter4-holder.jpg"
-	}, {
-		"chapter": "第 5 章：DIY 空氣品質偵測器",
-		"folder": "05-dust-sensor",
-		"desc": "Dust Sensor 是空氣微粒的感測器",
-		"holder": "https://static.mokoversity.com/moow/mbed-school/res/chapter5-holder.jpg"
-	}, {
-		"chapter": "第 6 章：ARM mbed 中斷處理",
-		"folder": "06-mbed-interrupt",
-		"desc": "學習 Interrupt Handling",
+		"folder": "01-first-order",
+		"desc": "認識 First Order Logic、開始寫第一個程式",
 		"holder": "http://lorempixel.com/350/235/"
-	}, {
-		"chapter": "第 7 章：IoT 物件與 Websocket 技術",
-		"folder": "07-data-push",
-		"desc": "使用 Websocket channel server 封裝 IoT objects",
-		"holder": "https://static.mokoversity.com/moow/mbed-school/res/chapter7-holder.jpg"
 	}]
 }
