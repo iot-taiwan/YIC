@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX 8
+#define MAX 100
 
 void print_result(int A[], int lo, int hi)
 {
@@ -50,7 +50,7 @@ void merge_sort(int A[], int lo, int hi)
         print_result(A, mid + 1, hi);
         merge_sort(A, mid + 1, hi);
 
-#if 0
+#if 1
         // merge
         mid++;
         while (lo < hi && mid <= hi) {
@@ -73,11 +73,11 @@ void merge_sort(int A[], int lo, int hi)
 
 int main()
 {
-    int A[8] = {27, 10, 12, 20, 25, 13, 15, 22};
-    //int A[MAX];
+    //int A[8] = {27, 10, 12, 20, 25, 13, 15, 22};
+    int A[MAX];
     int i;
          
-#if 0
+#if 1
     for (i = 0; i < MAX; i++) {
         // random number 1 to MAX0
         A[i] = (rand() % 100) +1;
