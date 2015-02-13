@@ -29,10 +29,8 @@ void merge_sort(int A[], int lo, int hi)
     } else {
         mid = (lo + hi) / 2;
 
-        print_result(A, lo, mid);
         merge_sort(A, lo, mid);
 
-        print_result(A, mid + 1, hi);
         merge_sort(A, mid + 1, hi);
 
         // merge
@@ -62,6 +60,10 @@ while (lo < hi && mid <= hi) {
     }
 }
 ```
+
+問題：
+
+* *for* 迴圏的部份造成的時間複雜度問題
 
 ## 參考資源
 
