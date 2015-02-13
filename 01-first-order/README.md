@@ -65,7 +65,7 @@ First Order Logic 使用二個符號來表示變數（variable quantifiers）：
 然後有一個傳回真假值的函數 *p()*：
 
 * ∀X p(X)：for all X, p(X) is true
-* ∃X：there exists an X such that p(X) is true
+* ∃X p(X)：there exists an X such that p(X) is true
 
 一個簡單的使用範例：
 
