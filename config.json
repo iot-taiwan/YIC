@@ -2,7 +2,7 @@
 	"author": "mbed Taiwan",
 	"url": "http://mbed.tw",
 	"title": "ARM mbed for Young",
-	"about": "「ARM mbed 物聯網學堂」教材由 mbed Taiwan 團隊製作。不漏接 IoT 商機與 ARM mbed 訊息，緊盯 http://mbed.tw",
+	"about": "Young Innovator Camp (YIC) is a branch of Mokoversity farm plan. YIC is designed for ages 14-19. In YIC, they will attend CS101 courses during the 5-days camp, and enjoy problem solving challenge.",
 	"index": [{
 		"chapter": "第 1 章：學習 First Order Logic",
 		"folder": "01-first-order",
