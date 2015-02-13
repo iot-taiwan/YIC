@@ -86,9 +86,9 @@ First Order Logic 使用二個符號來表示變數（variable quantifiers）：
 
 ## 挑戰題
 
-1. 如何用 First Order Logic 來設計開根號的演算法？
+(1). 如何用 First Order Logic 來設計開根號的演算法？
 
-2. 下列程式碼，是某個 First Order Logic 的開根號演算法。請試著撰寫這段程式碼的一階邏輯：
+(2). 下列程式碼，是某個 First Order Logic 的開根號演算法。請試著撰寫這段程式碼的一階邏輯：
 
 ```
 int main() 
@@ -114,7 +114,7 @@ int main()
 }
 ```
 
-3. 是否能設計一套更棒的「開根號一階邏輯」？
+(3). 是否能設計一套更棒的「開根號一階邏輯」？
 
 ## 參考資源
 
