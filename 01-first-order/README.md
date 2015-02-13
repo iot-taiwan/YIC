@@ -102,7 +102,7 @@ int main()
 
 	x = x - 1;
 
- 	tmp = x * x;  
+	tmp = x * x;  
 	a = n - tmp;
 
 	sqrt = 1.0;
