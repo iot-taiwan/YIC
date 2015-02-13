@@ -124,4 +124,6 @@ int main()
 
 [3]: http://programmermagazine.github.io/201403/htm/focus3.html
 
+[4]: http://www.cs.cornell.edu/Courses/cs472/2007fa/lectures/17-kb-systems_fol.pdf
 
+[5]: http://everything2.com/title/approximating+square+roots+using+first-order+Taylor+series
