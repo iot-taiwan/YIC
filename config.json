@@ -4,7 +4,7 @@
 	"title": "ARM mbed for Young",
 	"about": "「ARM mbed 物聯網學堂」教材由 mbed Taiwan 團隊製作。不漏接 IoT 商機與 ARM mbed 訊息，緊盯 http://mbed.tw",
 	"index": [{
-		"chapter": "第 1 章：ARM mbed 起步走",
+		"chapter": "第 1 章：學習 First Order Logic",
 		"folder": "01-first-order",
 		"desc": "認識 First Order Logic、開始寫第一個程式",
 		"holder": "http://lorempixel.com/350/235/"
