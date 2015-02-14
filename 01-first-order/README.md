@@ -2,11 +2,11 @@
 
 Mokoversity 農場計畫團隊，在 YIC 進行無教科書化的教學。第一天從「寫程式的 Zero Step」開始，介紹 Formal Language 的觀念，練習最重要的寫程式技能：邏輯。最重要的寫程式技能「邏輯」，可以從 First Order Logic 的觀念開始培養。
 
-第一天使用 First Order 的觀念來撰寫開根號的演算法。從數學公式與 First Order Logic 的角度來寫開根號演算法，會得到二套很不一樣的程式碼。
+第一天使用 First Order Logic 的觀念來撰寫開根號的演算法。從數學公式與 First Order Logic 的角度來寫開根號演算法，會得到二套很不一樣的程式碼。
 
 ## 不使用開方法
 
-課程一開始就推翻了開方法（中算開方）。因為電腦的強項是「計算」，所以我們就讓電腦好好地算術。所了寫了底下的演算法：
+課程一開始就推翻了開方法（中算開方）。因為電腦的強項是「計算」，所以我們就讓電腦好好地算術。所以寫了底下的演算法：
 
 ```
 int main() 
@@ -37,7 +37,7 @@ First Order Logic 的中文說法很很多：一階邏輯、一階謂詞演算�
 
 Frist Order Logic 既然是數學基礎很重要的一部份，那我們就透過上述的程式碼，來進行更深入的研討。
 
-透過上述的例子，除了能討論「筆算」與「電腦算」的思考差異外，其實也討論基本的邏輯問題：
+透過上述的例子，除了能討論「筆算」與「電腦算」的思考差異外，其實也討論基本的邏輯問題： 
 
 * 對自然數 X 而言，必定存在一個集合（set）的數值：x1, x2, x3...xN；
 * 並且該集合的數值，自乘（x1 * x1）的結果，都會小於 X；
@@ -115,6 +115,130 @@ int main()
 ```
 
 (3). 是否能設計一套更棒的「開根號一階邏輯」？
+
+## Coroutine 概念
+
+接著我們打算讓 ARM mbed 幫忙計算平方根之餘，還能同時閃爍 LED，提醒我們 ARM mbed 正在執行計算的任務，任務結束後停止閃爍 LED。
+
+這時就要引進一個重要的觀念稱為 Coroutine，中文譯作”協程“。Coroutine 的概念相當簡單，它允許程式在多個進入點暫停執行，然後在某處繼續啟動未完成的工作。簡單來說就是程式暫停現在的工作，去做另一件事，等完成之後再回頭把原本的工作結束。
+
+以下透過兩種不同的範例實作 Coroutine：
+
+本程式透過 Ticker 實作 Coroutine
+```
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+#include "mbed.h"
+ 
+Ticker flipper;
+DigitalOut led1(LED1);
+bool c=false;
+void flip() {     
+    while (!c) {
+        led1 = !led1;
+    }
+    led1=1;
+}
+ 
+int main() {
+ 
+    flipper.attach(&flip, 2.0); // the address of the function to be attached (flip) and the interval (2 seconds)
+    // spin in a main loop. flipper will interrupt it to call flip
+    while(1) {
+        unsigned long n=100000000;
+        float x=0;
+        while(x*x <n)
+            x = x + 0.01 ;   
+        c=true;
+    }
+}
+```
+
+Ticker 屬於 ARM mbed 中斷機制裏的一項技術，藉由使用 Ticker 物件的相關函數，實作 Coroutine 概念。
+
+
+本程式透過 Thread 實作 Coroutine
+```
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+#include "mbed.h"
+#include "rtos.h"
+ 
+DigitalOut myled(LED1);
+bool c=false;
+void led1_thread(void const *argument) {
+    
+    while (!c) {
+        myled = !myled;
+        Thread::wait(200);
+    }
+    myled=1;
+}
+int main() {
+    
+    Thread th1(led1_thread);   
+    while(1) {
+        unsigned long n=100000000;
+        float x=0;
+        while(x*x <n)
+            x = x + 0.01 ;   
+        c=true;
+    }
+    
+}
+```
+
+Thread，中文譯為“執行緒”，讓程式如分身一般，擁有多工處理的能力，藉由使用 Thread 物件的相關函數，實作 Coroutine 概念。
+
 
 ## 參考資源
 
