@@ -1,4 +1,4 @@
-# 學習 Divide and Conquer
+# 認識 Divide and Conquer
 
 ##
 
