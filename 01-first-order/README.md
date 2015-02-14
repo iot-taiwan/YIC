@@ -187,7 +187,6 @@ Thread，中文譯為“執行緒”，讓程式如分身一般，擁有多工�
 
 
 ## 參考資源
-
 [1]: http://www.cs.rit.edu/~rlc/Courses/IS/ClassNotes/PredicateLogic.pdf
 
 [2]: http://zh.wikipedia.org/wiki/全称量化
