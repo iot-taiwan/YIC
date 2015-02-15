@@ -118,72 +118,75 @@ int main()
 
 ## Coroutine 概念
 
-接著我們打算讓 ARM mbed 幫忙計算平方根之餘，還能同時閃爍 LED，提醒我們 ARM mbed 正在執行計算的任務，任務結束後停止閃爍 LED。
+延續前一個範例，接著我們打算讓 ARM mbed 在計算平方根之餘，還能同時閃爍 LED，提示我們目前正在執行計算平方根的任務，任務結束後停止閃爍 LED。
 
-這時就要引進一個重要的觀念稱為 Coroutine，中文譯作”協程“。Coroutine 的概念相當簡單，它允許程式在多個進入點暫停執行，然後在某處繼續啟動未完成的工作。簡單來說就是程式暫停現在的工作，去做另一件事，等完成之後再回頭把原本的工作結束。
+如何讓 ARM mbed 一邊執行計算，一邊閃爍 LED 呢？這時就要引進一個重要的觀念稱為 Coroutine，中文譯作”協程“。Coroutine 的概念相當簡單，它允許主程式在多個進入點暫停執行，然後在某處繼續啟動未完成的工作。簡單來說就是程式暫停現在的工作，去做另一件事，等結束之後再回頭把原本的工作完成。
 
-以下透過兩種不同的範例實作 Coroutine：
+以下透過兩個不同的範例實作 Coroutine 的概念。
 
-本程式透過 Ticker 實作 Coroutine
+此範例程式，透過設置一個 Ticker，反覆切換 LED 閃爍：
 ```
 #include "mbed.h"
- 
+
 Ticker flipper;
 DigitalOut led1(LED1);
-bool c=false;
-void flip() {     
-    while (!c) {
+bool flag = false;
+
+void flip() {
+    while (!flag) {
         led1 = !led1;
     }
-    led1=1;
+    led1 = 1;
 }
- 
+
 int main() {
- 
+    led1 = 0;
     flipper.attach(&flip, 2.0); // the address of the function to be attached (flip) and the interval (2 seconds)
+
     // spin in a main loop. flipper will interrupt it to call flip
     while(1) {
-        unsigned long n=100000000;
-        float x=0;
-        while(x*x <n)
-            x = x + 0.01 ;   
-        c=true;
+        unsigned long n = 100000000;
+        float x = 0.0;
+        while(x*x < n)
+            x = x + 0.01;
+        flag = true;
     }
 }
 ```
-
 Ticker 屬於 ARM mbed 中斷機制裏的一項技術，藉由使用 Ticker 物件的相關函數，實作 Coroutine 概念。
 
 
-本程式透過 Thread 實作 Coroutine
+此範例程式，透過設置一個 Thread，反覆切換 LED 閃爍：
 ```
 #include "mbed.h"
 #include "rtos.h"
- 
-DigitalOut myled(LED1);
-bool c=false;
+
+DigitalOut led1(LED1);
+bool flag = false;
+
 void led1_thread(void const *argument) {
     
-    while (!c) {
-        myled = !myled;
+    while (!flag) {
+        led = !led1;
         Thread::wait(200);
     }
-    myled=1;
+    led = 1;
 }
+
 int main() {
-    
-    Thread th1(led1_thread);   
+    led1 = 0;
+    Thread thread(led1_thread);
+
     while(1) {
-        unsigned long n=100000000;
-        float x=0;
-        while(x*x <n)
-            x = x + 0.01 ;   
-        c=true;
+        unsigned long n = 100000000;
+        float x = 0.0;
+        while(x*x < n)
+            x = x + 0.01;
+        flag = true;
     }
-    
 }
 ```
-Thread，中文譯為“執行緒”，讓程式如分身一般，擁有多工處理的能力，藉由使用 Thread 物件的相關函數，實作 Coroutine 概念。
+Thread，中文譯為“執行緒”，讓主程式如擁有分身一般，同時執行不同任務，藉由使用 Thread 物件的相關函數，實作 Coroutine 概念。
 
 
 ## 參考資源
