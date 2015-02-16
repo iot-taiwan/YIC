@@ -1,12 +1,11 @@
 #include <stdio.h>
 
 #define NUM     10
-#define MAX     1024
+#define MAX     300
 
 void print_tree(int tree[], int n)
 {
     int i;
-
     for (i = 0; i < n; i++) 
         printf("%d ", tree[i]);
     printf("\n");
