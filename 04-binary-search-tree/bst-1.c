@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-#define NUM 6
+#define NUM     10
+#define MAX     1024
 
 void print_tree(int tree[], int n)
 {
@@ -34,16 +35,16 @@ void insert_tree(int tree[], int n, int root)
 
 int main()
 {
-    //int n[NUM] = {6, 5, 23, 81, 9, 6, 32, 75, 60, 1};
-    int n[NUM] = {7, 4, 2, 25, 3, 10};
-    int tree[NUM*2];
+    int n[NUM] = {6, 5, 23, 81, 9, 6, 32, 75, 60, 1};
+    //int n[NUM] = {7, 4, 2, 25, 3, 10};
+    int tree[MAX];
     int i;
 
     // initialize binary search tree
-    for (i = 0; i < NUM*2; i++)
+    for (i = 0; i < MAX; i++)
         tree[i] = -1;
 
     for (i = 0; i < NUM; i++)
         insert_tree(tree, n[i], 0);
-    print_tree(tree, NUM*2);
+    print_tree(tree, MAX);
 }
